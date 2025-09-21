@@ -1,6 +1,0 @@
-apiVersion: v2
-name: deploy-test-app
-description: Helm chart for p-o-d/deploy-test-app
-type: application
-version: 0.1.0
-appVersion: "0.1.0" 
