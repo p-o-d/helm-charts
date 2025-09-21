@@ -1,0 +1,27 @@
+namespace: apps
+replicaCount: 1
+
+image:
+  repository: ghcr.io/p-o-d/deploy-test-app
+  tag: latest
+  pullPolicy: Always
+  pullSecrets: []
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: true
+  className: ""
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: web
+  hosts:
+    - host: deploy.local.lan
+      path: /
+  tls: []                             
+
+resources: {}
+nodeSelector: {}
+tolerations: []
+affinity: {}
